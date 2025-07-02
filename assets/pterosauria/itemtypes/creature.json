@@ -1,0 +1,100 @@
+﻿{
+  "code": "creature",
+  "class": "ItemCreature",
+  "maxstacksize": 64,
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [ 
+		"dromaeosauridae-utahraptor-adult-male","dromaeosauridae-utahraptor-adult-female", "dromaeosauridae-utahraptor-baby-male", "dromaeosauridae-utahraptor-baby-female","dromaeosauridae-utahraptor-nest-mature","dromaeosauridae-utahraptor-nest-incubating","dromaeosauridae-utahraptor-nest-empty",
+		"dromaeosauridae-dakotaraptor-adult-male","dromaeosauridae-dakotaraptor-adult-female", "dromaeosauridae-dakotaraptor-baby-male", "dromaeosauridae-dakotaraptor-baby-female","dromaeosauridae-dakotaraptor-nest-mature","dromaeosauridae-dakotaraptor-nest-incubating","dromaeosauridae-dakotaraptor-nest-empty",
+		"dromaeosauridae-achillobator-adult-male","dromaeosauridae-achillobator-adult-female", "dromaeosauridae-achillobator-baby-male", "dromaeosauridae-achillobator-baby-female","dromaeosauridae-achillobator-nest-mature","dromaeosauridae-achillobator-nest-incubating","dromaeosauridae-achillobator-nest-empty",
+		"dromaeosauridae-austroraptor-adult-male","dromaeosauridae-austroraptor-adult-female", "dromaeosauridae-austroraptor-baby-male", "dromaeosauridae-austroraptor-baby-female","dromaeosauridae-austroraptor-nest-mature","dromaeosauridae-austroraptor-nest-incubating","dromaeosauridae-austroraptor-nest-empty",
+		"dromaeosauridae-deinonychus-adult-male","dromaeosauridae-deinonychus-adult-female", "dromaeosauridae-deinonychus-baby-male", "dromaeosauridae-deinonychus-baby-female","dromaeosauridae-deinonychus-nest-mature","dromaeosauridae-deinonychus-nest-incubating","dromaeosauridae-deinonychus-nest-empty",
+		"dromaeosauridae-dromaeosaurus-adult-male","dromaeosauridae-dromaeosaurus-adult-female", "dromaeosauridae-dromaeosaurus-baby-male", "dromaeosauridae-dromaeosaurus-baby-female","dromaeosauridae-dromaeosaurus-nest-mature","dromaeosauridae-dromaeosaurus-nest-incubating","dromaeosauridae-dromaeosaurus-nest-empty",
+		"dromaeosauridae-adasaurus-adult-male","dromaeosauridae-adasaurus-adult-female", "dromaeosauridae-adasaurus-baby-male", "dromaeosauridae-adasaurus-baby-female","dromaeosauridae-adasaurus-nest-mature","dromaeosauridae-adasaurus-nest-incubating","dromaeosauridae-adasaurus-nest-empty",
+		"dromaeosauridae-velociraptor-adult-male","dromaeosauridae-velociraptor-adult-female", "dromaeosauridae-velociraptor-baby-male", "dromaeosauridae-velociraptor-baby-female","dromaeosauridae-velociraptor-nest-mature","dromaeosauridae-velociraptor-nest-incubating","dromaeosauridae-velociraptor-nest-empty",
+		"dromaeosauridae-saurornitholestes-adult-male","dromaeosauridae-saurornitholestes-adult-female", "dromaeosauridae-saurornitholestes-baby-male", "dromaeosauridae-saurornitholestes-baby-female","dromaeosauridae-saurornitholestes-nest-mature","dromaeosauridae-saurornitholestes-nest-incubating","dromaeosauridae-saurornitholestes-nest-empty",
+		"dromaeosauridae-atrociraptor-adult-male","dromaeosauridae-atrociraptor-adult-female", "dromaeosauridae-atrociraptor-baby-male", "dromaeosauridae-atrociraptor-baby-female","dromaeosauridae-atrociraptor-nest-mature","dromaeosauridae-atrociraptor-nest-incubating","dromaeosauridae-atrociraptor-nest-empty",
+		"dromaeosauridae-pyroraptor-adult-male","dromaeosauridae-pyroraptor-adult-female", "dromaeosauridae-pyroraptor-baby-male", "dromaeosauridae-pyroraptor-baby-female","dromaeosauridae-pyroraptor-nest-mature","dromaeosauridae-pyroraptor-nest-incubating","dromaeosauridae-pyroraptor-nest-empty",
+		"dromaeosauridae-buitreraptor-adult-male","dromaeosauridae-buitreraptor-adult-female", "dromaeosauridae-buitreraptor-baby-male", "dromaeosauridae-buitreraptor-baby-female","dromaeosauridae-buitreraptor-nest-mature","dromaeosauridae-buitreraptor-nest-incubating","dromaeosauridae-buitreraptor-nest-empty",
+		"dromaeosauridae-microraptor-adult-male","dromaeosauridae-microraptor-adult-female", "dromaeosauridae-microraptor-baby-male", "dromaeosauridae-microraptor-baby-female","dromaeosauridae-microraptor-nest-mature","dromaeosauridae-microraptor-nest-incubating","dromaeosauridae-microraptor-nest-empty",
+		"dromaeosauridae-rahonavis-adult-male","dromaeosauridae-rahonavis-adult-female", "dromaeosauridae-rahonavis-baby-male", "dromaeosauridae-rahonavis-baby-female","dromaeosauridae-rahonavis-nest-mature","dromaeosauridae-rahonavis-nest-incubating","dromaeosauridae-rahonavis-nest-empty",
+
+	  ]
+    }
+  ],
+	"shapeByType": {
+			"*-utahraptor-adult-*": {"base": "entity/land/dromaeosauridae/utahraptor/adult"}, "*-utahraptor-baby-*": {"base": "entity/land/dromaeosauridae/utahraptor/baby"},
+			"*-dakotaraptor-adult-*": {"base": "entity/land/dromaeosauridae/dakotaraptor/adult"}, "*-dakotaraptor-baby-*": {"base": "entity/land/dromaeosauridae/dakotaraptor/baby"},
+			"*-achillobator-adult-*": {"base": "entity/land/dromaeosauridae/achillobator/adult"}, "*-achillobator-baby-*": {"base": "entity/land/dromaeosauridae/achillobator/baby"},
+			"*-austroraptor-adult-*": {"base": "entity/land/dromaeosauridae/austroraptor/adult"}, "*-austroraptor-baby-*": {"base": "entity/land/dromaeosauridae/austroraptor/baby"},
+			"*-deinonychus-adult-*": {"base": "entity/land/dromaeosauridae/deinonychus/adult"}, "*-deinonychus-baby-*": {"base": "entity/land/dromaeosauridae/deinonychus/baby"},
+			"*-dromaeosaurus-adult-*": {"base": "entity/land/dromaeosauridae/dromaeosaurus/adult"}, "*-dromaeosaurus-baby-*": {"base": "entity/land/dromaeosauridae/dromaeosaurus/baby"},
+			"*-adasaurus-adult-*": {"base": "entity/land/dromaeosauridae/adasaurus/adult"}, "*-adasaurus-baby-*": {"base": "entity/land/dromaeosauridae/adasaurus/baby"},
+			"*-velociraptor-adult-*": {"base": "entity/land/dromaeosauridae/velociraptor/adult"}, "*-velociraptor-baby-*": {"base": "entity/land/dromaeosauridae/velociraptor/baby"},
+			"*-saurornitholestes-adult-*": {"base": "entity/land/dromaeosauridae/saurornitholestes/adult"}, "*-saurornitholestes-baby-*": {"base": "entity/land/dromaeosauridae/saurornitholestes/baby"},
+			"*-atrociraptor-adult-*": {"base": "entity/land/dromaeosauridae/atrociraptor/adult"}, "*-atrociraptor-baby-*": {"base": "entity/land/dromaeosauridae/atrociraptor/baby"},
+			"*-pyroraptor-adult-*": {"base": "entity/land/dromaeosauridae/pyroraptor/adult"}, "*-pyroraptor-baby-*": {"base": "entity/land/dromaeosauridae/pyroraptor/baby"},
+			"*-buitreraptor-adult-*": {"base": "entity/land/dromaeosauridae/buitreraptor/adult"}, "*-buitreraptor-baby-*": {"base": "entity/land/dromaeosauridae/buitreraptor/baby"},
+			"*-microraptor-adult-*": {"base": "entity/land/dromaeosauridae/microraptor/adult"}, "*-microraptor-baby-*": {"base": "entity/land/dromaeosauridae/microraptor/baby"},
+			"*-rahonavis-adult-*": {"base": "entity/land/dromaeosauridae/rahonavis/adult"}, "*-rahonavis-baby-*": {"base": "entity/land/dromaeosauridae/rahonavis/baby"},
+			"*-nest-*":{"base": "entity/land/nest"}, "*-nest-empty":{"base": "entity/land/nest-empty"},
+		},
+	"textureByType": {
+            "*-utahraptor-adult-*":{"base": "entity/utahraptor-adult"},"*-utahraptor-baby-*":{"base": "entity/utahraptor-adult"},
+			"*-dakotaraptor-adult-*":{"base": "entity/dakotaraptor-adult"},"*-dakotaraptor-baby-*":{"base": "entity/dakotaraptor-adult"},
+			"*-achillobator-adult-*":{"base": "entity/achillobator-adult"},"*-achillobator-baby-*":{"base": "entity/achillobator-adult"},
+			"*-austroraptor-adult-*":{"base": "entity/austroraptor-adult"},"*-austroraptor-baby-*":{"base": "entity/austroraptor-adult"},
+			"*-deinonychus-adult-*":{"base": "entity/deinonychus-adult"},"*-deinonychus-baby-*":{"base": "entity/deinonychus-adult"},
+			"*-dromaeosaurus-adult-*":{"base": "entity/dromaeosaurus-adult"},"*-dromaeosaurus-baby-*":{"base": "entity/dromaeosaurus-adult"},
+			"*-adasaurus-adult-*":{"base": "entity/adasaurus-adult"},"*-adasaurus-baby-*":{"base": "entity/adasaurus-adult"},
+			"*-velociraptor-adult-*":{"base": "entity/velociraptor-adult"},"*-velociraptor-baby-*":{"base": "entity/velociraptor-adult"},
+			"*-saurornitholestes-adult-*":{"base": "entity/saurornitholestes-adult"},"*-saurornitholestes-baby-*":{"base": "entity/saurornitholestes-adult"},
+			"*-atrociraptor-adult-*":{"base": "entity/atrociraptor-adult"},"*-atrociraptor-baby-*":{"base": "entity/atrociraptor-adult"},
+			"*-pyroraptor-adult-*":{"base": "entity/pyroraptor-adult"},"*-pyroraptor-baby-*":{"base": "entity/pyroraptor-adult"},
+			"*-buitreraptor-adult-*":{"base": "entity/buitreraptor-adult"},"*-buitreraptor-baby-*":{"base": "entity/buitreraptor-adult"},
+			"*-microraptor-adult-*":{"base": "entity/microraptor-adult"},"*-microraptor-baby-*":{"base": "entity/microraptor-adult"},
+			"*-rahonavis-adult-*":{"base": "entity/rahonavis-adult"},"*-rahonavis-baby-*":{"base": "entity/rahonavis-adult"},
+        },
+  "creativeinventory": { "general": ["*"], "items": ["*"], "creatures": ["*"] },
+	"materialDensity": 600,
+	"guiTransformByType": {
+		"*-baby-*": {
+			"rotate": true,
+			"translation": { "x": -20, "y": -15, "z": 0 },
+			"rotation": { "x": -11, "y": -52, "z": -180 },
+			"origin": { "x": 1.5, "y": 1.5, "z": 1.5 },
+			"scale": 0.7
+		},
+		"creature-dromaeosauridae-*": {
+			"rotate": true,
+			"translation": { "x": -25, "y": -5, "z": -5 },
+			"rotation": { "x": -11, "y": -52, "z": -180 },
+			"origin": { "x": 1.5, "y": 1.5, "z": 1.5 },
+			"scale": 0.5
+		},
+	},
+
+	"tpHandTransformByType": {
+		"*-baby-*": {
+			"translation": { "x": -0.3, "y": -0.4, "z": -0.4 },
+			"rotation": { "x": 13, "y": -166, "z": 75 },
+			"origin": { "x": 0, "y": 0, "z": 0 },
+			"scale": 0.25
+		},
+		"creature-dromaeosauridae-*": {
+			"translation": { "x": -2, "y": -2.7, "z": -1.7 },
+			"rotation": { "x": 2, "y": -180, "z": 23 },
+			"scale": 0.2
+		},
+	},
+
+	"fpHandTransformByType": {
+		"creature-dromaeosauridae-*": {
+			"translation": { "x": 0.2, "y": 0, "z": 0 },
+			"rotation": { "x": -8, "y": -63, "z": -7 }
+		}
+	}
+}
+

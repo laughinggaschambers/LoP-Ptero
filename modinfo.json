@@ -1,0 +1,9 @@
+{
+  "type": "content",
+  "modid": "dromaeosauridae",
+  "name": "Legacy of the Phanerozoic: Birds of Prey",
+  "authors": [ "laughinggas" ],
+  "description": "Adds severals dromaeosaurids to Vintage Story",
+  "version": "1.0.18",
+  "side": "Universal"
+}

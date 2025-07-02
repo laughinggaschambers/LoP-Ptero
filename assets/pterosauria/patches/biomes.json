@@ -1,0 +1,213 @@
+[
+ {
+    "file": "dromaeosauridae:entities/land/dromaeosauridae.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+      "*-utahraptor-*": {
+          "biorealm": [
+            "pacific nearctic",
+            "atlantic nearctic",
+          ]
+        },
+
+      "*-dakotaraptor-*": {
+              "biorealm": [
+                "atlantic nearctic",
+              ]
+            },
+
+      "*-achillobator-*": {
+              "biorealm": [
+                "eastern palearctic",
+              ]
+            },
+
+      "*-austroraptor-*": {
+              "biorealm": [
+                "atlantic neotropic",
+              ]
+            },
+
+      "*-deinonychus-*": {
+              "biorealm": [
+                "pacific nearctic",
+                "atlantic nearctic",
+                "atlantic neotropic",
+              ]
+            },
+
+      "*-dromaeosaurus-*": {
+              "biorealm": [
+                "pacific nearctic",
+                "atlantic nearctic",
+              ]
+            },
+
+      "*-adasaurus-*": {
+              "biorealm": [
+                "eastern palearctic",
+              ]
+            },
+
+      "*-velociraptor-*": {
+              "biorealm": [
+                "central palearctic",
+                "eastern palearctic",
+              ]
+            },
+
+      "*-saurornitholestes-*": {
+              "biorealm": [
+                "pacific nearctic",
+                "atlantic nearctic",
+                "atlantic palearctic",
+              ]
+            },
+
+      "*-atrociraptor-*": {
+              "biorealm": [
+                "pacific nearctic",
+              ]
+            },
+
+      "*-pyroraptor-*": {
+              "biorealm": [
+                "atlantic palearctic",
+              ]
+            },
+
+      "*-buitreraptor-*": {
+              "biorealm": [
+                "pacific neotropic",
+                "atlantic neotropic",
+              ]
+            },
+
+      "*-microraptor-*": {
+              "biorealm": [
+                "eastern palearctic",
+              ]
+            },
+
+      "*-rahonavis-*": {
+              "biorealm": [
+                "eastern afrotropic",
+              ]
+            },
+
+    },
+    "dependsOn": [
+      {
+        "modid": "biomes"
+      }
+    ]
+  },
+  {
+    "file": "dromaeosauridae:entities/land/nest.json",
+    "op": "addmerge",
+    "path": "/attributesByType",
+    "side": "Server",
+    "value": {
+
+      "*-utahraptor-*": {
+          "biorealm": [
+            "pacific nearctic",
+            "atlantic nearctic",
+          ]
+        },
+
+      "*-dakotaraptor-*": {
+              "biorealm": [
+                "atlantic nearctic",
+              ]
+            },
+
+      "*-achillobator-*": {
+              "biorealm": [
+                "eastern palearctic",
+              ]
+            },
+
+      "*-austroraptor-*": {
+              "biorealm": [
+                "atlantic neotropic",
+              ]
+            },
+
+      "*-deinonychus-*": {
+              "biorealm": [
+                "pacific nearctic",
+                "atlantic nearctic",
+                "atlantic neotropic",
+              ]
+            },
+
+      "*-dromaeosaurus-*": {
+              "biorealm": [
+                "pacific nearctic",
+                "atlantic nearctic",
+              ]
+            },
+
+      "*-adasaurus-*": {
+              "biorealm": [
+                "eastern palearctic",
+              ]
+            },
+
+      "*-velociraptor-*": {
+              "biorealm": [
+                "central palearctic",
+                "eastern palearctic",
+              ]
+            },
+
+      "*-saurornitholestes-*": {
+              "biorealm": [
+                "pacific nearctic",
+                "atlantic nearctic",
+                "atlantic palearctic",
+              ]
+            },
+
+      "*-atrociraptor-*": {
+              "biorealm": [
+                "pacific nearctic",
+              ]
+            },
+
+      "*-pyroraptor-*": {
+              "biorealm": [
+                "atlantic palearctic",
+              ]
+            },
+
+      "*-buitreraptor-*": {
+              "biorealm": [
+                "pacific neotropic",
+                "atlantic neotropic",
+              ]
+            },
+
+      "*-microraptor-*": {
+              "biorealm": [
+                "eastern palearctic",
+              ]
+            },
+
+      "*-rahonavis-*": {
+              "biorealm": [
+                "eastern afrotropic",
+              ]
+            },
+
+    },
+    "dependsOn": [
+      {
+        "modid": "biomes"
+      }
+    ]
+  },
+]

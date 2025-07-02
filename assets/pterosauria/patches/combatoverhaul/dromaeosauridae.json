@@ -1,0 +1,72 @@
+[
+  {
+    "side": "Server",
+    "dependsOn": [{ "modid": "combatoverhaul" }],
+    "file": "dromaeosauridae:entities/land/dromaeosauridae",
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "value": {
+      "code": "CombatOverhaul:EntityColliders",
+      "elements": {
+        "Torso": ["Neck", "Torso", "Body", "Body Back", "Tail", "Tail2","Tail3","Tail4","Tail5",],
+        "Head": ["Head", "Top Jaw", "Lower Jaw","Lower Jaw2","Upper Lip","Lower Lip", "Nose", "Eye Slot","Throat"],
+        "Arm": ["ArmR","ArmL","ArmR2","ArmL2","ArmR3","ArmL3","ArmR4","ArmL4",],
+        "Leg": ["LegL","ChinL","LegR","ChinR", "LegL2","LegR2"],
+        "Critical": ["EyeL", "EyeR"],
+        "Resistant": []
+      }
+    }
+  },
+  {
+    "side": "Server",
+    "dependsOn": [{ "modid": "combatoverhaul" }],
+    "file": "dromaeosauridae:entities/land/dromaeosauridae",
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "value": {
+      "code": "CombatOverhaul:EntityColliders",
+      "elements": {
+        "Torso": ["Neck", "Torso", "Body", "Body Back", "Tail", "Tail2","Tail3","Tail4","Tail5",],
+        "Head": ["Head", "Top Jaw", "Lower Jaw","Lower Jaw2","Upper Lip","Lower Lip", "Nose", "Eye Slot","Throat"],
+        "Arm": ["ArmR","ArmL","ArmR2","ArmL2","ArmR3","ArmL3","ArmR4","ArmL4",],
+        "Leg": ["LegL","ChinL","LegR","ChinR", "LegL2","LegR2"],
+        "Critical": ["EyeL", "EyeR"],
+        "Resistant": []
+      }
+    }
+  },
+  {
+    "side": "Server",
+    "dependsOn": [{ "modid": "combatoverhaul" }],
+    "file": "dromaeosauridae:entities/land/dromaeosauridae",
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "value": {
+      "code": "CombatOverhaul:EntityDamageModel",
+      "damageModel": {
+        "TorsoDamageMultiplier": 1,
+        "LimbsDamageMultiplier": 0.75,
+        "HeadDamageMultiplier": 2.5,
+        "CriticalDamageMultiplier": 25,
+        "DefaultResists": {"BluntAttack": 6, "SlashingAttack": 4, "PiercingAttack": 0}
+      }
+    }
+  },
+  {
+    "side": "Server",
+    "dependsOn": [{ "modid": "combatoverhaul" }],
+    "file": "dromaeosauridae:entities/land/dromaeosauridae",
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "value": {
+      "code": "CombatOverhaul:EntityDamageModel",
+      "damageModel": {
+        "TorsoDamageMultiplier": 1,
+        "LimbsDamageMultiplier": 0.75,
+        "HeadDamageMultiplier": 2.5,
+        "CriticalDamageMultiplier": 25,
+        "DefaultResists": {"BluntAttack": 6, "SlashingAttack": 4, "PiercingAttack": 0}
+      }
+    }
+  }
+]

@@ -1,0 +1,423 @@
+{
+	"code": "dromaeosauridae",
+	"class": "EntityAgent",
+	"variantgroups": [
+		{"code": "type","states": ["utahraptor","dakotaraptor","achillobator","austroraptor","deinonychus","dromaeosaurus","adasaurus","velociraptor","saurornitholestes","atrociraptor","pyroraptor","buitreraptor","microraptor","rahonavis",]},
+		{ "code": "age", "states": ["nest"] },
+		{ "code": "state", "states": ["incubating","mature","empty"] }
+	],
+	"selectionBoxSizeByType": {
+		"*": {"x": 1,"y": 0.5}
+	},
+	"collisionBoxSizeByType": {
+		"*": {"x": 1,"y": 0.5}
+	},
+	"deadSelectionBoxSizeByType": {
+		"*": {"x": 1,"y": 0.5}
+	},
+	"knockbackResistanceByType": {
+		"*": 10.0
+	},
+	"eyeHeight": 0.6,
+	"weightByType": {
+		"*": 100
+	},
+	"drops": [],
+	"attributes": {
+		"handbook": {"groupcode": "creaturegroup-nest"},
+	},
+	"client": {
+		"renderer": "Shape",
+		"shapeByType": {
+			"*-nest-empty": { "base": "entity/land/nest-empty" },
+            "*": { "base": "entity/land/nest" },
+
+		},
+		"sizeByType": {
+			"*": 1
+		},
+		"behaviors": [
+			{
+				"code": "controlledphysics",
+				"stepHeight": 0
+			},
+			{ "code": "interpolateposition" },
+			{"code": "despawn","minPlayerDistance": 8,"belowLightLevel": 8,"minSeconds": 300},
+			{
+				"code": "floatupwhenstuck",
+				"onlyWhenDead": true
+			},
+			{ "code": "harvestable" }
+
+		],
+		"animations": [
+			{"code": "die","animation": "Die","animationSpeed": 2.00,"weight": 10,"blendMode": "Average","triggeredBy": { "onControls": [ "dead" ] }},
+			{"code": "idle","animation": "Idle","blendMode": "AddAverage","easeOutSpeed": 4,"triggeredBy": { "defaultAnim": true }},
+			{"code": "sleep","animation": "Sleep","easeInSpeed": 4,"easeOutSpeed": 4,"blendMode": "Average"}
+		]
+	},
+	"server": {
+		"attributes": {
+		},
+		"behaviors": [
+			{
+				"code": "controlledphysics",
+				"stepHeight": 0
+			},
+			{"code": "despawn","minPlayerDistance": 8,"belowLightLevel": 8,"minSeconds": 300},
+			{
+				"code": "health",
+				"maxhealthByType": {
+					"*": 20
+				}
+			},
+			{
+				"code": "deaddecay",
+				"hoursToDecay": 24
+			},
+			{
+				"code": "floatupwhenstuck",
+				"onlyWhenDead": true
+			},
+			{
+				"code": "harvestable",
+				"drops": [
+					{
+						"type": "item",
+						"code": "game:stick",
+						"quantityByType": {
+							"*": {"avg": 6,"var": 4}
+						}
+					},
+					{
+						"type": "item",
+						"code": "dromaeosauridae:creature-dromaeosauridae-{type}-egg-raw",
+						"quantityByType": {
+							"*-incubating": {"avg": 10,"var": 20, "dist":"gaussian"},
+							"*":{"avg": 0,"var": 0}
+						}
+					},
+				]
+			},
+			{
+				"code": "grow",
+				"enabledByType": {
+					"*-empty": false,
+					"*": true
+				},
+				"hoursToGrowByType": {"*-incubating": 160,"*-mature": 2},
+				"adultEntityCodesByType": {
+					"*-incubating": ["dromaeosauridae:dromaeosauridae-{type}-nest-mature"],
+					"*-mature": ["dromaeosauridae:dromaeosauridae-{type}-nest-empty"]
+				}
+			},
+			{"code": "emotionstates","states": []},
+			{
+				"code": "taskai",
+				"aitasks": [
+					{
+						"code": "bellalarm",
+						"animation": "Idle",
+						"enabledByType": {"*-mature": true,"*": false},
+						"onNearbyEntityCodes": ["player"],
+						"spawnMobs": [
+							"dromaeosauridae:dromaeosauridae-{type}-baby-female",
+							"dromaeosauridae:dromaeosauridae-{type}-baby-male"
+						],
+						"spawnMaxQuantity": 5,
+						"spawnIntervalMsMin": 1000,
+						"spawnIntervalMsMax": 4000,
+						"spawnRange": 0.5,
+						"seekingRange": 100,
+						"priority": 1.9,
+						"minduration": 2000,
+						"maxduration": 8000,
+						"mincooldown": 6000,
+						"maxcooldown": 12000,
+						"animationSpeed": 2.0
+					},
+					{
+						"code": "idle",
+						"animation": "Idle",
+						"priority": 0.5,
+						"minduration": 180000,
+						"maxduration": 240000,
+						"mincooldown": 3000,
+						"maxcooldown": 3000
+					},
+				]
+			}
+
+		],
+		},
+	"spawnconditions": {
+		"worldgen": {
+			"chanceByType": {"*-empty": 0.0},
+			"triesPerChunk": { "avg": 0.0, "var": 0},
+			"maxQuantityByGroup": { "code": "dromaeosauridae-*", "maxQuantity": 1 },
+			"tryOnlySurface": true,
+			"insideBlockCodes": [
+				"game:air",
+				"game:tallgrass-*",
+				"game:gravel-*",
+				"game:sand-*",
+				"game:snowlayer-1",
+				"game:soil-*"
+			],
+			"groupSizeByType": {
+				"*": { "dist": "uniform", "avg": 1, "var": 0 }
+			},
+			"*":["dromaeosauridae:dromaeosauridae-{type}-adult-female","dromaeosauridae:dromaeosauridae-{type}-adult-male"]},
+
+		"runtime": {
+			"group": "neutral",
+			"tryOnlySurface": true,
+			"maxQuantityByGroup": { "code": "dromaeosauridae-*", "maxQuantity": 1 },
+			"chanceByType": {"*-incubating": 0.00001,"*": 0.0},
+			"TriesPerChunk": { "avg": 0.0, "var": 0 },
+			"mindistancetoplayer": 50,
+			"maxLightLevel": 7,
+			"lightLevelType": "onlyBlockLight",
+			"spawnCapPlayerScaling": 0.0,
+			"groupSizeByType": {
+				"*": { "dist": "uniform", "avg": 1, "var": 0 }
+			},
+			"insideBlockCodes": [
+				"game:air",
+				"game:tallgrass-*",
+				"game:gravel-*",
+				"game:sand-*",
+				"game:snowlayer-1",
+				"game:soil-*"
+			],
+			"companionsByType": {
+			"*":["dromaeosauridae:dromaeosauridae-{type}-adult-female","dromaeosauridae:dromaeosauridae-{type}-adult-male"]}
+		}
+	},
+	"spawnconditionsByType": {
+		"*-utahraptor-nest-incubating": {
+		"climate": {
+			"minTemp": 5,
+			"maxTemp": 25,
+			"minRain": 0.2,
+			"maxRain": 0.6,
+			"minForestOrShrubs": 0.3,
+			"maxForest": 0.7,
+			"maxShrubs": 0.7,
+			"minY": 0.9,
+			"maxY": 1.6
+		},
+		"worldgen": {
+					"triesPerChunk": { "avg": 0.001, "var": 0}
+				}
+		},
+		"*-dakotaraptor-nest-incubating": {
+		"climate": {
+			"minTemp": 10,
+			"maxTemp": 30,
+			"minRain": 0.2,
+			"maxRain": 0.6,
+			"minForestOrShrubs": 0.3,
+			"maxForest": 0.7,
+			"maxShrubs": 0.7,
+			"minY": 0.9,
+			"maxY": 1.6
+		},
+		"worldgen": {
+					"triesPerChunk": { "avg": 0.001, "var": 0}
+				}
+		},
+		"*-achillobator-nest-incubating": {
+		"climate": {
+			"minTemp": 10,
+			"maxTemp": 35,
+			"minRain": 0.2,
+			"maxRain": 0.6,
+			"minForestOrShrubs": 0.3,
+			"maxForest": 0.7,
+			"maxShrubs": 0.7,
+			"minY": 0.9,
+			"maxY": 1.6
+		},
+		"worldgen": {
+					"triesPerChunk": { "avg": 0.001, "var": 0}
+				}
+		},
+		"*-austroraptor-nest-incubating": {
+		"climate": {
+			"minTemp": 15,
+			"maxTemp": 35,
+			"minRain": 0.2,
+			"maxRain": 0.6,
+			"minForestOrShrubs": 0.3,
+			"maxForest": 0.7,
+			"maxShrubs": 0.7,
+			"minY": 0.9,
+			"maxY": 1.6
+		},
+		"worldgen": {
+					"triesPerChunk": { "avg": 0.001, "var": 0}
+				}
+		},
+		"*-deinonychus-nest-incubating": {
+		"climate": {
+			"minTemp": 20,
+			"maxTemp": 35,
+			"minRain": 0.3,
+			"maxRain": 0.8,
+			"minForestOrShrubs": 0.5,
+			"maxForest": 0.9,
+			"maxShrubs": 0.9,
+			"minY": 0.9,
+			"maxY": 1.7
+		},
+		"worldgen": {
+					"triesPerChunk": { "avg": 0.001, "var": 0}
+				}
+		},
+		"*-dromaeosaurus-nest-incubating": {
+		"climate": {
+			"minTemp": 5,
+			"maxTemp": 25,
+			"minRain": 0.2,
+			"maxRain": 0.6,
+			"minForestOrShrubs": 0.3,
+			"maxForest": 0.7,
+			"maxShrubs": 0.7,
+			"minY": 0.9,
+			"maxY": 1.6
+		},
+		"worldgen": {
+					"triesPerChunk": { "avg": 0.001, "var": 0}
+				}
+		},
+		"*-adasaurus-nest-incubating": {
+		"climate": {
+			"minTemp": 10,
+			"maxTemp": 30,
+			"minRain": 0.2,
+			"maxRain": 0.6,
+			"minForestOrShrubs": 0.3,
+			"maxForest": 0.7,
+			"maxShrubs": 0.7,
+			"minY": 0.9,
+			"maxY": 1.6
+		},
+		"worldgen": {
+					"triesPerChunk": { "avg": 0.001, "var": 0}
+				}
+		},
+		"*-velociraptor-nest-incubating": {
+		"climate": {
+			"minTemp": 10,
+			"maxTemp": 30,
+			"minRain": 0.2,
+			"maxRain": 0.6,
+			"minForestOrShrubs": 0.3,
+			"maxForest": 0.7,
+			"maxShrubs": 0.7,
+			"minY": 0.9,
+			"maxY": 1.6
+		},
+		"worldgen": {
+					"triesPerChunk": { "avg": 0.001, "var": 0}
+				}
+		},
+		"*-saurornitholestes-nest-incubating": {
+		"climate": {
+			"minTemp": 10,
+			"maxTemp": 30,
+			"minRain": 0.2,
+			"maxRain": 0.6,
+			"minForestOrShrubs": 0.3,
+			"maxForest": 0.7,
+			"maxShrubs": 0.7,
+			"minY": 0.9,
+			"maxY": 1.6
+		},
+		"worldgen": {
+					"triesPerChunk": { "avg": 0.001, "var": 0}
+				}
+		},
+		"*-atrociraptor-nest-incubating": {
+		"climate": {
+			"minTemp": 10,
+			"maxTemp": 30,
+			"minRain": 0.2,
+			"maxRain": 0.6,
+			"minForestOrShrubs": 0.3,
+			"maxForest": 0.7,
+			"maxShrubs": 0.7,
+			"minY": 0.9,
+			"maxY": 1.6
+		},
+		"worldgen": {
+					"triesPerChunk": { "avg": 0.001, "var": 0}
+				}
+		},
+		"*-pyroraptor-nest-incubating": {
+		"climate": {
+			"minTemp": 10,
+			"maxTemp": 30,
+			"minRain": 0.2,
+			"maxRain": 0.6,
+			"minForestOrShrubs": 0.3,
+			"maxForest": 0.7,
+			"maxShrubs": 0.7,
+			"minY": 0.9,
+			"maxY": 1.6
+		},
+		"worldgen": {
+					"triesPerChunk": { "avg": 0.001, "var": 0}
+				}
+		},
+		"*-buitreraptor-nest-incubating": {
+		"climate": {
+			"minTemp": 15,
+			"maxTemp": 35,
+			"minRain": 0.2,
+			"maxRain": 0.6,
+			"minForestOrShrubs": 0.3,
+			"maxForest": 0.7,
+			"maxShrubs": 0.7,
+			"minY": 0.9,
+			"maxY": 1.6
+		},
+		"worldgen": {
+					"triesPerChunk": { "avg": 0.001, "var": 0}
+				}
+		},
+		"*-microraptor-nest-incubating": {
+		"climate": {
+			"minTemp": 15,
+			"maxTemp": 35,
+			"minRain": 0.2,
+			"maxRain": 0.6,
+			"minForestOrShrubs": 0.3,
+			"maxForest": 0.7,
+			"maxShrubs": 0.7,
+			"minY": 0.9,
+			"maxY": 1.6
+		},
+		"worldgen": {
+					"triesPerChunk": { "avg": 0.001, "var": 0}
+				}
+		},
+		"*-rahonavis-nest-incubating": {
+		"climate": {
+			"minTemp": 15,
+			"maxTemp": 35,
+			"minRain": 0.2,
+			"maxRain": 0.6,
+			"minForestOrShrubs": 0.3,
+			"maxForest": 0.7,
+			"maxShrubs": 0.7,
+			"minY": 0.9,
+			"maxY": 1.6
+		},
+		"worldgen": {
+					"triesPerChunk": { "avg": 0.001, "var": 0}
+				}
+		}
+	},
+}
